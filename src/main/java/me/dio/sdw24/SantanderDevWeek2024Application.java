@@ -1,5 +1,6 @@
 package me.dio.sdw24;
 
+import me.dio.sdw24.aplication.AskChampionsUseCase;
 import me.dio.sdw24.aplication.ListChampionsUseCase;
 import me.dio.sdw24.domain.ports.ChampionsRepository;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,10 @@ public class SantanderDevWeek2024Application {
 	@Bean
 	public ListChampionsUseCase provideListChampionsUseCase(ChampionsRepository repository){
 		return new ListChampionsUseCase(repository);
+	}
+	@Bean
+	public AskChampionsUseCase provideAskChampionsUseCase(ChampionsRepository repository){
+		return new AskChampionsUseCase(repository);
 	}
 
 }
